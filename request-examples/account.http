@@ -1,0 +1,143 @@
+### Đăng nhập
+POST http://localhost:8000/api/v2/account/login
+Content-Type: application/json
+
+{
+    "account_name": "vinhit",
+    "password": "123456"
+}
+
+### Lấy tất cả tài khoản
+GET http://localhost:8000/api/v1/account/all?page=1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQyOTA2ODI0LCJleHAiOjE2NDQ5ODA0MjR9.MWK1LYnlUB5_omlAlJ_FnjMcFV8mX1UqZoeC8LctbAw
+
+### Lấy thông tin tài khoản, oc status
+GET http://localhost:8000/api/v1/account/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0MTk5NDc0LCJleHAiOjE2NDYyNzMwNzR9.jIVabmrlQ8lotHxjwTXbOfJ6CLs8Ft7Lh6frH-IQ3BA
+
+
+### Tạo tài khoản
+POST http://localhost:8000/api/v1/account
+Content-Type: application/json
+
+{
+    "account_name":"admin3",
+    "real_name": "Beerus Sama",
+    "email": "beerus@gmail.com",
+    "password":"123456"
+}
+
+### Khóa tài khoản
+POST http://localhost:8000/api/v1/account/11/ban
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMiwiaWRfcm9sZSI6MiwiYWNjb3VudF9uYW1lIjoiYWNjb3V0OCIsInN0YXR1cyI6MCwiaWF0IjoxNjMxNTQyNDI5LCJleHAiOjE2MzE1NDYwMjl9.0AjXDWDMM6Wx_dOY8z_NhvM3U0K64AiQk3T1FvmC8pI
+Content-Type: application/json
+
+{
+    "hours_lock": "1",
+
+    "reason": "Khoa choi cho vui"
+}
+
+### Sửa thông tin tài khoản theo id
+PUT http://localhost:8000/api/v1/account/5
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJpZF9yb2xlIjozLCJhY2NvdW50X25hbWUiOiJ2aW5oaXQiLCJpYXQiOjE2MzA0MTk4NjYsImV4cCI6MTYzMDQyMzQ2Nn0.V399cu2fk-T0IntA-5k-4HsewFdsBogW7XhHKe040Eo
+Content-Type: application/json
+
+{
+    "real_name": "TQ Vinh",
+    "birth": "2000-02-06",
+    "gender": 0,
+    "company": "PTITHCM",
+    "phone": "0372621750",
+    "avatar": "/public/vinh.jpg"
+}
+
+### Thay đổi chức vụ tài khoản
+PUT http://localhost:8000/api/v1/account/12/role/2
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMywiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoiYWRtaW4yIiwic3RhdHVzIjowLCJpYXQiOjE2MzE1NDEzNzksImV4cCI6MTYzMTU0NDk3OX0.q61o1lf0emjnv-E7h5n3Rr9RE2eVJQP_RcuLPnvs9TU
+
+
+### Thay đổi trạng thái tài khoản
+PUT http://localhost:8000/api/v1/account/5/status/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxLCJpZF9yb2xlIjoxLCJhY2NvdW50X25hbWUiOiJhZG1pbiIsInN0YXR1cyI6MCwiaWF0IjoxNjMwNTA2NzAwLCJleHAiOjE2MzA1MTAzMDB9.NMVKkGVLQJeoJy0KMbYAguipybak92vwQP2uhdhu_PQ
+
+
+### Lấy tất cả bài viết cùa tài khoản
+GET http://localhost:8000/api/v1/account/60/posts?page=2
+
+
+### Lấy danh sách các bookmark
+GET http://localhost:8000/api/v1/account/60/bookmarks
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0NDc3NjU2LCJleHAiOjE2NDY1NTEyNTZ9.kv3VB1JQnQmucFwAqa9R-w7ePJ4O9pUsGCNkmzUbVdA
+
+
+### Lấy danh sách các tag đang follow
+GET http://localhost:8000/api/v1/account/1/follow_tag
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQzMzc4MjU0LCJleHAiOjE2NDU0NTE4NTR9.Wv1bk7VFnyx1X-BZYgCVYIDwQ6EH3-1gHlKorqF3EtQ
+
+### Lấy danh sách các tài khoản đang được người có id này theo dõi
+GET http://localhost:8000/api/v1/account/1/follower
+
+
+### Lấy danh sách các tài khoản theo dõi người có id này
+GET http://localhost:8000/api/v1/account/2/following
+
+
+### Lấy điểm vote của người dùng có id
+GET http://localhost:8000/api/v1/account/3/mark
+
+### Lấy tổng số lượt xem bài viết của người dùng có id
+GET http://localhost:8000/api/v1/account/1/view
+
+### acc7: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMSwiaWRfcm9sZSI6MywiYWNjb3VudF9uYW1lIjoiYWNjb3V0NyIsInN0YXR1cyI6MCwiaWF0IjoxNjMxNTQxNDQ5LCJleHAiOjE2MzE1NDUwNDl9.Rj__nDrbKU6xFVjEvJ-V0g7PSlenyyYM8vawRXjAQgM
+### admin: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMywiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoiYWRtaW4yIiwic3RhdHVzIjowLCJpYXQiOjE2MzE1NDEzNzksImV4cCI6MTYzMTU0NDk3OX0.q61o1lf0emjnv-E7h5n3Rr9RE2eVJQP_RcuLPnvs9TU
+### acc8: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMiwiaWRfcm9sZSI6MiwiYWNjb3VudF9uYW1lIjoiYWNjb3V0OCIsInN0YXR1cyI6MCwiaWF0IjoxNjMxNTQyNDI5LCJleHAiOjE2MzE1NDYwMjl9.0AjXDWDMM6Wx_dOY8z_NhvM3U0K64AiQk3T1FvmC8pI
+### lấy thông tin tất cả tài khoản 
+GET http://localhost:8000/api/v1/account/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMiwiaWRfcm9sZSI6MiwiYWNjb3VudF9uYW1lIjoiYWNjb3V0OCIsInN0YXR1cyI6MCwiaWF0IjoxNjMxNTQyNDI5LCJleHAiOjE2MzE1NDYwMjl9.0AjXDWDMM6Wx_dOY8z_NhvM3U0K64AiQk3T1FvmC8pI
+
+### đổi mật khẩu
+PUT http://localhost:8000/api/v1/account/12/change_password
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxLCJpZF9yb2xlIjoxLCJzdGF0dXMiOjAsImlhdCI6MTYzMTU0NTYyNCwiZXhwIjoxNjMxNTQ5MjI0fQ.lQlYqke4DdKGL7zLbj3HOmLeHmo1qJEHEppgi4XZoJA
+Content-Type: application/json
+
+{
+    "new_password":"123456"
+}
+
+### mở tải khoản
+PATCH http://localhost:8000/api/v1/account/11/unlock
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMiwiaWRfcm9sZSI6MiwiYWNjb3VudF9uYW1lIjoiYWNjb3V0OCIsInN0YXR1cyI6MCwiaWF0IjoxNjMxNTQyNDI5LCJleHAiOjE2MzE1NDYwMjl9.0AjXDWDMM6Wx_dOY8z_NhvM3U0K64AiQk3T1FvmC8pI
+
+### khóa vĩnh viễn
+PATCH  http://localhost:8000/api/v1/account/11/die
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMywiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoiYWRtaW4yIiwic3RhdHVzIjowLCJpYXQiOjE2MzE1NDEzNzksImV4cCI6MTYzMTU0NDk3OX0.q61o1lf0emjnv-E7h5n3Rr9RE2eVJQP_RcuLPnvs9TU
+Content-Type: application/json
+
+{
+    "reason":"thik thi khoa, ko thik thi thoi"
+}
+
+### mở khóa vĩnh viễn
+PATCH  http://localhost:8000/api/v1/account/11/revive
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxMywiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoiYWRtaW4yIiwic3RhdHVzIjowLCJpYXQiOjE2MzE1NDEzNzksImV4cCI6MTYzMTU0NDk3OX0.q61o1lf0emjnv-E7h5n3Rr9RE2eVJQP_RcuLPnvs9TU
+
+### quên mật khẩu
+POST http://localhost:8000/api/v1/account/forgot/password
+Content-Type: application/json
+
+{
+    "account_name" : "admin"
+}
+
+### gửi mã xác thực
+POST http://localhost:8000/api/v1/account/1/confirm
+Content-Type: application/json
+
+{
+    "code" : "507319"
+}
+
+### Tìm kiếm tài khoản
+GET http://localhost:8000/api/v1/account/search?k=trong
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0MjQyODc4LCJleHAiOjE2NDYzMTY0Nzh9.kV30ABaK52hIpMiA4L9NnMvDpZypNXnYcFCfLOflgT0

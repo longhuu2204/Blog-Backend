@@ -1,0 +1,34 @@
+### Get all tags
+GET http://localhost:8000/api/v1/tag/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0MjQyODc4LCJleHAiOjE2NDYzMTY0Nzh9.kV30ABaK52hIpMiA4L9NnMvDpZypNXnYcFCfLOflgT0
+
+
+### Lấy thẻ theo ID
+GET http://localhost:8000/api/v1/tag/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0MjQyODc4LCJleHAiOjE2NDYzMTY0Nzh9.kV30ABaK52hIpMiA4L9NnMvDpZypNXnYcFCfLOflgT0
+
+### Tạo thẻ mới
+POST http://localhost:8000/api/v1/tag
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxLCJpZF9yb2xlIjoxLCJhY2NvdW50X25hbWUiOiJhZG1pbiIsImlhdCI6MTYzMDQyNDY1NiwiZXhwIjoxNjMwNDI4MjU2fQ.djGvA98gMLuP32qPqwZy7p0BgiQbVymgduziMX4juRA
+Content-Type: application/json
+
+{
+    "name": "Java"
+}
+
+### sửa thẻ
+PUT http://localhost:8000/api/v1/tag/4
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxLCJpZF9yb2xlIjoxLCJhY2NvdW50X25hbWUiOiJhZG1pbiIsImlhdCI6MTYzMDQyODQ1MSwiZXhwIjoxNjMwNDMyMDUxfQ.1V1LSb_nQPqVUcNW_RqzvZjh1tSGhyfuaiqHoEVpor4
+Content-Type: application/json
+
+{
+    "name": "iOS - Swift",
+    "logo": "/public/abcd.jpg"
+}
+
+### Lấy danh sách bài viết có thẻ id và trang
+GET http://localhost:8000/api/v1/tag/1/posts?page=1
+
+### Tìm kiếm thẻ
+GET http://localhost:8000/api/v1/tag/search?k=a
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo2MCwiaWRfcm9sZSI6MSwiYWNjb3VudF9uYW1lIjoidmluaGl0IiwiaWF0IjoxNjQ0MjQyODc4LCJleHAiOjE2NDYzMTY0Nzh9.kV30ABaK52hIpMiA4L9NnMvDpZypNXnYcFCfLOflgT0

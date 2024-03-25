@@ -1,0 +1,144 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ITNEWS API",
+    "description": "Documents API for reader"
+  },
+  "basePath": "/api/v2",
+  "tags": [
+    {
+      "name": "ACCOUNT",
+      "description": "API for Account"
+    },
+    {
+      "name": "post",
+      "description": "API for Post"
+    },
+    {
+      "name": "tag",
+      "description": "API for Tag"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "scheme": "bearer",
+      "bearerFormat": "JWT",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/account/information": {
+      "get": {
+        "tags": ["ACCOUNT"],
+        "summary": "Lấy thông tin chi tiết của tài khoản người dùng",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Lấy thông tin tài khoản thành công"
+          },
+          "401": {
+            "description": "Đề nghị yêu cầu xác thực"
+          },
+          "500": {
+            "description": "Lỗi thực thi request trên server"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/all": {
+      "get": {
+        "tags": ["ACCOUNT"],
+        "summary": "Lấy danh sách tất cả tài khoản",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Lấy danh sách thành công"
+          },
+          "500": {
+            "description": "Lỗi thực thi request trên server"
+          }
+        }
+      }
+    },
+    "/account/{id}": {
+      "get": {
+        "tags": ["ACCOUNT"],
+        "summary": "Lấy thông tin 1 tài khoản theo id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID tài khoản cần lấy thông tin",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lấy thông tin tài khoản thành công"
+          },
+          "404": {
+            "description": "Không tìm thấy tài khoản"
+          },
+          "500": {
+            "description": "Lỗi thực thi request trên server"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/login": {
+      "post": {
+        "tags": ["ACCOUNT"],
+        "summary": "Đăng nhập",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Thông tin đăng nhập",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/LoginInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Đăng nhập thành công"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LoginInfo": {
+      "type": "object",
+      "properties": {
+        "account_name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
